@@ -23,10 +23,6 @@ def insert_entry_to_table(connection, question)
     '#{question[2]}', '#{question[3]}', #{question[4]});")
 end
 
-def set_random_seed(connection, seed)
-  connection.exec("SELECT setseed(#{seed});")
-end
-
 def initialize_test_questions_table
   empty_test_questions_table
   populate_test_question_table

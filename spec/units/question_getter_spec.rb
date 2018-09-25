@@ -16,7 +16,7 @@ RSpec.describe QuestionGetter do
       'third_answer' => 'Three',
       'correct_answer' => '1'
     }
-    subject.set_random_seed(0.02) # Don't change this seed!
+    subject.give_random_seed(0.02) # Don't change this seed!
     expect(subject.new_question).to eq test_q
   end
 end

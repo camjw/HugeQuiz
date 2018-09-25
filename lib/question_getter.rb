@@ -10,18 +10,20 @@ class QuestionGetter
   end
 
   def new_question
-    question = @connection.exec('SELECT * FROM questions ORDER BY RANDOM() LIMIT 1;')
+    question = @connection.exec('SELECT * FROM questions ORDER BY RANDOM()'\
+      ' LIMIT 1;')
     question[0]
   end
 
-  def set_random_seed(seed)
-    raise "Not a valid seed" unless valid_seed?(seed)
+  def give_random_seed(seed)
+    raise 'Not a valid seed' unless valid_seed?(seed)
+
     @connection.exec("SELECT setseed(#{seed});")
   end
 
   private
 
   def valid_seed?(seed)
-    seed.is_a?(Float) && seed ** 2 <= 1
+    seed.is_a?(Float) && seed**2 <= 1
   end
 end
