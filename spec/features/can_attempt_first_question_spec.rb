@@ -1,17 +1,15 @@
-feature 'The user sees a random first question' do
-  scenario 'when they click the attempt button' do
-    srand(0)
-    attempt_first_question
-    expect(page).to have_content 'How many holes does a polo have?'
-  end
-end
+describe 'Question generation feature' do
+  include Rack::Test::Methods
 
-feature 'The user sees a random do question' do
-  scenario 'when they click the attempt button' do
-    srand(1)
-    attempt_first_question
-    test_q = 'In West Side Story, which of these is the name of one of the'\
-     ' gangs?'
-    expect(page).to have_content test_q
+  def app
+    QuizApp.new(getter: QuestionGetter.new(database: 'quiz_questions_test'))
+  end
+
+  feature 'The user sees a random first question' do
+    scenario 'when they click the attempt button' do
+      app.set_database_seed(0.02)
+      attempt_first_question
+      expect(page).to have_content 'How many holes does a polo have?'
+    end
   end
 end

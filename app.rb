@@ -12,6 +12,7 @@ class QuizApp < Sinatra::Base
     @getter = getter
   end
 
+
   get '/' do
     erb :index
   end
@@ -59,5 +60,10 @@ class QuizApp < Sinatra::Base
   get '/out_of_questions' do
     @game = session[:game]
     erb :out_of_questions
+  end
+  
+  public
+  def set_database_seed(seed)
+    @getter.give_random_seed(seed)
   end
 end
