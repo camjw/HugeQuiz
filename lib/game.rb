@@ -52,6 +52,6 @@ class Game
   def load_question(question)
     @current_question = question
     new_id = question.question_id
-    @asked_questions << new_id if !@asked_questions.include?(new_id)
+    @asked_questions << new_id unless @asked_questions.include?(new_id)
   end
 end

@@ -8,7 +8,9 @@ require_relative 'features/web_helpers'
 require_relative 'helper_methods'
 
 ENV['RACK_ENV'] = 'test'
-Capybara.app = QuizApp
+Capybara.app = QuizApp.new(
+  getter: QuestionGetter.new(database: 'quiz_questions_test')
+)
 
 SimpleCov.formatter = SimpleCov::Formatter::Console
 

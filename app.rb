@@ -7,11 +7,11 @@ require_relative 'lib/question_getter'
 class QuizApp < Sinatra::Base
   use Rack::Session::Pool
 
-  def initialize(getter: QuestionGetter.new)
+  def initialize(getter: QuestionGetter.new, seed: nil)
     super
     @getter = getter
+    @getter.give_random_seed(seed) if seed
   end
-
 
   get '/' do
     erb :index
@@ -60,10 +60,5 @@ class QuizApp < Sinatra::Base
   get '/out_of_questions' do
     @game = session[:game]
     erb :out_of_questions
-  end
-  
-  public
-  def set_database_seed(seed)
-    @getter.give_random_seed(seed)
   end
 end

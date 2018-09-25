@@ -5,7 +5,10 @@ def attempt_first_question
   click_button 'Play!'
 end
 
-def set_database_seed(seed)
-  connection = PG.connect(dbname: 'quiz_questions_test')
-  connection.exec("SELECT setseed(#{seed})")
-end 
+def get_correct_answer(page)
+  answers = %w[Four Sharks Hairspray]
+  answers.each do |answer|
+    return answer if page.has_selector?("input[type='submit']"\
+      "[value='#{answer}']")
+  end
+end
