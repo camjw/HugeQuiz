@@ -4,6 +4,7 @@ require 'simplecov'
 require 'simplecov-console'
 require_relative '../app.rb'
 require_relative 'features/web_helpers'
+require_relative 'helper_methods'
 
 ENV['RACK_ENV'] = 'test'
 Capybara.app = QuizApp

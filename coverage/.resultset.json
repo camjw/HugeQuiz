@@ -1,14 +1,6 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Cameron/Projects/DiodeProjects/quiz_app/spec/features/attempt_question_spec.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
       "/Users/Cameron/Projects/DiodeProjects/quiz_app/spec/features/can_attempt_first_question_spec.rb": [
         1,
         1,
@@ -18,6 +10,8 @@
         null
       ],
       "/Users/Cameron/Projects/DiodeProjects/quiz_app/spec/features/can_enter_answer_first_question_spec.rb": [
+        1,
+        1,
         1,
         1,
         1,
@@ -34,6 +28,6 @@
         null
       ]
     },
-    "timestamp": 1537797548
+    "timestamp": 1537865434
   }
 }

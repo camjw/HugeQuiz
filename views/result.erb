@@ -1,0 +1,16 @@
+<head>
+</head>
+
+</body>
+<h1> Welcome to the Quiz! </h1>
+<h2> You answered <%= session[:answer] %></h2>
+
+<% if ['four', '4'].include?(session[:answer]) %>
+<p> Well done! That's the correct answer! Would you like to play again? </p>
+<% else %>
+<p> Unlucky, that's the wrong answer! Would you like to play again? </p>
+<% end %>
+<form action='/' method='get'>
+  <input type='submit' value='Yes!' />
+</form>
+<body>
