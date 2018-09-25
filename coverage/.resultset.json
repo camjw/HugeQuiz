@@ -6,6 +6,17 @@
         1,
         1,
         1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
         null,
         null
       ],
@@ -26,8 +37,57 @@
         1,
         null,
         null
+      ],
+      "/Users/Cameron/Projects/DiodeProjects/quiz_app/spec/units/game_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/Cameron/Projects/DiodeProjects/quiz_app/lib/game.rb": [
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/Cameron/Projects/DiodeProjects/quiz_app/lib/question.rb": [
+        1,
+        null
+      ],
+      "/Users/Cameron/Projects/DiodeProjects/quiz_app/spec/units/player_spec.rb": [
+
+      ],
+      "/Users/Cameron/Projects/DiodeProjects/quiz_app/spec/units/question_getter_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        2,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/Cameron/Projects/DiodeProjects/quiz_app/lib/question_getter.rb": [
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/Cameron/Projects/DiodeProjects/quiz_app/spec/units/question_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
       ]
     },
-    "timestamp": 1537865434
+    "timestamp": 1537868004
   }
 }

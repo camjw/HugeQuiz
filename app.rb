@@ -1,7 +1,7 @@
 require 'sinatra/base'
 
+# This class is the wrapper for the website.
 class QuizApp < Sinatra::Base
-
   enable :sessions
 
   get '/' do
@@ -20,5 +20,4 @@ class QuizApp < Sinatra::Base
   get '/answer' do
     erb :result
   end
-
 end

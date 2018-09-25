@@ -1,5 +1,5 @@
-feature "The user is congratulated" do
-  scenario "when they answer correctly" do
+feature 'The user is congratulated' do
+  scenario 'when they answer correctly' do
     attempt_first_question
     fill_in(:answer, with: 'Four')
     click_button 'Answer!'
