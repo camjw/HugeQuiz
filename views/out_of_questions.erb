@@ -1,0 +1,11 @@
+<head>
+</head>
+
+<body>
+<h1> Well done, <%= @game.player.name %>! We're out of questions!</h1>
+<h2> You scored: <%= @game.player.score %>!</h2>
+<h2> Press this button to play again: </h2>
+<form action='/' method='get'>
+  <input type='submit' value='Play!' />
+</form>
+</body>
