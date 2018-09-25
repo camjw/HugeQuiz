@@ -20,7 +20,7 @@ class Game
 
   def play_game(answer)
     score_point if correct_answer?(answer)
-    return correct_answer?(answer)
+    correct_answer?(answer)
   end
 
   private
