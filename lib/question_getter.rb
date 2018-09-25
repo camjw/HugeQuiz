@@ -21,6 +21,10 @@ class QuestionGetter
     @connection.exec("SELECT setseed(#{seed});")
   end
 
+  def total_questions
+    @connection.exec('SELECT COUNT(*) FROM questions;')[0]['count'].to_i
+  end
+
   private
 
   def valid_seed?(seed)

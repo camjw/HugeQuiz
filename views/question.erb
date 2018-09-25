@@ -1,12 +1,15 @@
 <head>
 </head>
 
-</body>
-<h1> Welcome to the Quiz! </h1>
-<h2> Here is your first devilish question: </h2>
-<p> How many holes does a polo have? </p>
-<form action='/answer' method='post'>
-  <input type="text" name="answer" />
-  <input type='submit' value='Answer!' />
-</form>
 <body>
+<h1> Welcome to the Quiz, <%= @game.player.name %>! </h1>
+<h2> Question <%= @game.asked_questions.size %>: </h2>
+<p> <%= @game.current_question.give_question %> </p>
+
+<% @answers.each do |answer| %>
+<form action='/answer_<%= @answers.index(answer) %>' method='post'>
+  <input type='submit' value='<%= answer %>' />
+</form>
+
+<% end %>
+</body>

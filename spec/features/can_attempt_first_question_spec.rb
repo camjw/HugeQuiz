@@ -11,7 +11,7 @@ feature 'The user sees a random do question' do
     srand(1)
     attempt_first_question
     test_q = 'In West Side Story, which of these is the name of one of the'\
-     'gangs?'
+     ' gangs?'
     expect(page).to have_content test_q
   end
 end

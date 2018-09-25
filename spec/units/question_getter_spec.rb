@@ -19,4 +19,8 @@ RSpec.describe QuestionGetter do
     subject.give_random_seed(0.02) # Don't change this seed!
     expect(subject.new_question).to eq test_q
   end
+
+  it 'knows the total number of questions in the database' do
+    expect(subject.total_questions).to eq 3
+  end
 end

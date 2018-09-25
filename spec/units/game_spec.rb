@@ -10,7 +10,9 @@ test_q = {
 }
 
 RSpec.describe Game do
-  let(:fake_getter) { double :QuestionGetter, new_question: test_q }
+  let(:fake_getter) do
+    double :QuestionGetter, new_question: test_q, total_questions: 3
+  end
   let(:fake_question) do
     double :Question, question_id: '1', correct_answer?: true
   end
@@ -29,8 +31,14 @@ RSpec.describe Game do
     subject.new_question
   end
 
-  it 'should instruct the getter to update the question' do
-    expect(subject.current_question).to eq fake_question
+  describe 'interactions with the question getter' do
+    it 'should instruct the getter to update the question' do
+      expect(subject.current_question).to eq fake_question
+    end
+
+    it 'knows how many questions there are in the database' do
+      expect(subject.total_questions).to eq 3
+    end
   end
 
   it 'should keep track of questions already asked' do
