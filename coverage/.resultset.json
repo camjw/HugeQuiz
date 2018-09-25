@@ -1,63 +1,6 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Cameron/Projects/DiodeProjects/quiz_app/spec/features/can_attempt_first_question_spec.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null
-      ],
-      "/Users/Cameron/Projects/DiodeProjects/quiz_app/spec/features/can_enter_answer_first_question_spec.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/Cameron/Projects/DiodeProjects/quiz_app/spec/features/greeted_on_loading_page_spec.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/Cameron/Projects/DiodeProjects/quiz_app/spec/units/game_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        null
-      ],
-      "/Users/Cameron/Projects/DiodeProjects/quiz_app/lib/game.rb": [
-        1,
-        null,
-        1,
-        null
-      ],
-      "/Users/Cameron/Projects/DiodeProjects/quiz_app/lib/question.rb": [
-        1,
-        null
-      ],
-      "/Users/Cameron/Projects/DiodeProjects/quiz_app/spec/units/player_spec.rb": [
-
-      ],
       "/Users/Cameron/Projects/DiodeProjects/quiz_app/spec/units/question_getter_spec.rb": [
         1,
         null,
@@ -70,6 +13,14 @@
         null,
         1,
         1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
         1,
         null,
         null
@@ -77,17 +28,33 @@
       "/Users/Cameron/Projects/DiodeProjects/quiz_app/lib/question_getter.rb": [
         1,
         null,
+        null,
         1,
-        null
-      ],
-      "/Users/Cameron/Projects/DiodeProjects/quiz_app/spec/units/question_spec.rb": [
         1,
         null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
         1,
         null,
         null
       ]
     },
-    "timestamp": 1537868004
+    "timestamp": 1537872873
   }
 }

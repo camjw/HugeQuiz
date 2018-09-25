@@ -2,7 +2,7 @@ require 'pg'
 
 def empty_test_questions_table
   conn = PG.connect(dbname: 'quiz_questions_test')
-  conn.exec('TRUNCATE questions;')
+  conn.exec('TRUNCATE questions RESTART IDENTITY;')
 end
 
 def populate_test_question_table
@@ -17,13 +17,17 @@ def populate_test_question_table
   test_questions.each { |question| insert_entry_to_table(conn, question) }
 end
 
-def initialize_test_questions_table
-  empty_test_questions_table
-  populate_test_question_table
-end
-
 def insert_entry_to_table(connection, question)
   connection.exec("INSERT INTO questions(question, first_answer, second_answer,
     third_answer, correct_answer) VALUES('#{question[0]}', '#{question[1]}',
     '#{question[2]}', '#{question[3]}', #{question[4]});")
+end
+
+def set_random_seed(connection, seed)
+  connection.exec("SELECT setseed(#{seed});")
+end
+
+def initialize_test_questions_table
+  empty_test_questions_table
+  populate_test_question_table
 end
