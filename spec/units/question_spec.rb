@@ -20,6 +20,10 @@ RSpec.describe Question do
     expect(subject.give_answers).to eq %w[One Four Three]
   end
 
+  it 'can return the id of the question' do
+    expect(subject.question_id).to eq '1'
+  end
+
   it 'can tell when an answer is incorrect' do
     expect(subject.check_answer(0)).to eq false
   end

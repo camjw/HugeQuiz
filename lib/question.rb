@@ -18,4 +18,8 @@ class Question
   def check_answer(answer)
     answer == @question_hash['correct_answer'].to_i
   end
+
+  def question_id
+    @question_hash['id']
+  end 
 end
