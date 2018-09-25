@@ -25,10 +25,10 @@ RSpec.describe Question do
   end
 
   it 'can tell when an answer is incorrect' do
-    expect(subject.check_answer(0)).to eq false
+    expect(subject.correct_answer?(0)).to eq false
   end
 
   it 'can tell when an answer is incorrect' do
-    expect(subject.check_answer(1)).to eq true
+    expect(subject.correct_answer?(1)).to eq true
   end
 end

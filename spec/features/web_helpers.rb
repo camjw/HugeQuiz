@@ -1,4 +1,4 @@
 def attempt_first_question
   visit '/'
-  click_button 'Yes!'
+  click_button 'Play!'
 end

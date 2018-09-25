@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative 'lib/game'
+require_relative 'lib/player'
 
 # This class is the wrapper for the website.
 class QuizApp < Sinatra::Base
@@ -9,6 +11,10 @@ class QuizApp < Sinatra::Base
   end
 
   get '/question' do
+    name = params[:player_name]
+    name = 'stranger' if name == ''
+
+    session[:game] = Game.new(Player.new(name))
     erb :question
   end
 
