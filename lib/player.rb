@@ -16,6 +16,10 @@ class Player
     @lives -= 1
   end
 
+  def gain_life
+    @lives += 1
+  end
+
   def game_over?
     @lives.zero?
   end

@@ -4,7 +4,6 @@ require 'yaml'
 # This class takes the data from the yaml file and parses it into a format
 # acceptable for the SQL server, where it then deposits the information.
 class TweetParser
-
   def initialize(database: 'quiz_questions')
     @connection = PG.connect(dbname: database)
     @data_dump = nil
@@ -45,7 +44,7 @@ class TweetParser
     if answers.size == 3
       correct_answer = answers.index { |answer| answer.include?('✓') }
       answers.each { |answer| answer.slice!('✓') }
-      answers.each { |answer| answer.strip! }
+      answers.each(&:strip!)
     end
     [answers, correct_answer]
   end
@@ -61,6 +60,6 @@ class TweetParser
   end
 
   def correct_form?(entry)
-    entry.size == 5 && entry.reduce(true) { |bool, entry| bool && entry }
+    entry.size == 5 && entry.reduce(true) { |bool, part| bool && part }
   end
 end

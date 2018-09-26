@@ -7,7 +7,7 @@ class Game
   attr_reader :current_question, :asked_questions, :player
 
   def initialize(player, getter: QuestionGetter.new, question_type: Question,
-      leaderboard: Leaderboard.new)
+                 leaderboard: Leaderboard.new)
     @player = player
     @getter = getter
     @question_type = question_type
@@ -50,11 +50,15 @@ class Game
     player.lose_life
   end
 
+  def gain_life
+    player.gain_life
+  end
+
   def add_to_leaderboard
     @leaderboard.add_result(player)
   end
 
-  def get_top_scores
+  def fetch_top_scores
     @leaderboard.get_leaderboard(20)
   end
 

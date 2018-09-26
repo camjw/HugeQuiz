@@ -27,6 +27,10 @@ class QuizApp < Sinatra::Base
 
   get '/question' do
     @game = session[:game]
+    questions_asked = @game.asked_questions.size
+
+    @game.gain_life if (questions_asked % 5).zero? && (questions_asked > 0)
+
     redirect '/out_of_questions' if @game.all_questions_asked?
 
     @game.new_question
@@ -57,7 +61,7 @@ class QuizApp < Sinatra::Base
 
   get '/leaderboard' do
     @game = session[:game]
-    @top_scores = @game.get_top_scores
+    @top_scores = @game.fetch_top_scores
     erb :leaderboard
   end
 end
