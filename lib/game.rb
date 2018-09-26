@@ -13,6 +13,7 @@ class Game
     @question_type = question_type
     @asked_questions = []
     @current_question = nil
+    @leaderboard = leaderboard
   end
 
   def new_question
@@ -47,6 +48,14 @@ class Game
 
   def lose_life
     player.lose_life
+  end
+
+  def add_to_leaderboard
+    @leaderboard.add_result(player)
+  end
+
+  def get_top_scores
+    @leaderboard.get_leaderboard(20)
   end
 
   private

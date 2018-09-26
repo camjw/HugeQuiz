@@ -19,7 +19,7 @@ class QuizApp < Sinatra::Base
 
   post '/initialize_game' do
     name = params[:player_name]
-    name = 'stranger' if name == ''
+    name = 'Stranger' if name == ''
 
     session[:game] = Game.new(Player.new(name), getter: @getter)
     redirect '/question'
@@ -63,11 +63,19 @@ class QuizApp < Sinatra::Base
 
   get '/game_over' do
     @game = session[:game]
+    @game.add_to_leaderboard
     erb :game_over
   end
 
   get '/out_of_questions' do
     @game = session[:game]
+    @game.add_to_leaderboard
     erb :out_of_questions
+  end
+
+  get '/leaderboard' do
+    @game = session[:game]
+    @top_scores = @game.get_top_scores
+    erb :leaderboard
   end
 end

@@ -1,0 +1,15 @@
+<head>
+</head>
+
+<body>
+<h1> Welcome to the leaderboard! </h1>
+<% @top_scores.each do |score| %>
+  <li> <%= score["name"]%>: <%= score["score"] %> </li>
+<% end %>
+
+<h2> Press this button to play again: </h2>
+<form action='/' method='get'>
+  <input type='submit' value='Play!' />
+</form>
+
+</body>
