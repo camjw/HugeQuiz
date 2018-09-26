@@ -1,11 +1,13 @@
 require_relative 'question'
 require_relative 'question_getter'
+require_relative 'leaderboard'
 
 # This class runs the game, generates questions and takes a player object.
 class Game
   attr_reader :current_question, :asked_questions, :player
 
-  def initialize(player, getter: QuestionGetter.new, question_type: Question)
+  def initialize(player, getter: QuestionGetter.new, question_type: Question,
+      leaderboard: Leaderboard.new)
     @player = player
     @getter = getter
     @question_type = question_type
@@ -33,6 +35,18 @@ class Game
 
   def all_questions_asked?
     @asked_questions.size == total_questions
+  end
+
+  def game_over?
+    player.game_over?
+  end
+
+  def remaining_lives
+    player.lives
+  end
+
+  def lose_life
+    player.lose_life
   end
 
   private

@@ -35,7 +35,7 @@ class TweetParser
   end
 
   def store_into_database(entry)
-    @connection.exec("INSERT INTO questions(question, first_answer, "\
+    @connection.exec('INSERT INTO questions(question, first_answer, '\
       "second_answer, third_answer, correct_answer) VALUES('#{entry[0]}', "\
       "'#{entry[1]}', '#{entry[2]}', '#{entry[3]}', #{entry[4]});")
   end
@@ -44,8 +44,8 @@ class TweetParser
     correct_answer = nil
     if answers.size == 3
       correct_answer = answers.index { |answer| answer.include?('✓') }
-      answers.each {|answer| answer.slice!('✓') }
-      answers.each {|answer| answer.strip! }
+      answers.each { |answer| answer.slice!('✓') }
+      answers.each { |answer| answer.strip! }
     end
     [answers, correct_answer]
   end
@@ -61,6 +61,6 @@ class TweetParser
   end
 
   def correct_form?(entry)
-    entry.size == 5 && entry.reduce(true) { |bool, entry| bool && (entry) }
+    entry.size == 5 && entry.reduce(true) { |bool, entry| bool && entry }
   end
 end

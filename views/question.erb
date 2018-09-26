@@ -3,6 +3,7 @@
 
 <body>
 <h1> Welcome to the Quiz, <%= @game.player.name %>! </h1>
+<h2> You have <%= @game.remaining_lives %> lives remaining. </h2>
 <h2> Question <%= @game.asked_questions.size %>: </h2>
 <p> <%= @game.current_question.give_question %> </p>
 
