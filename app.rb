@@ -34,27 +34,9 @@ class QuizApp < Sinatra::Base
     erb :question
   end
 
-  post '/answer_0' do
+  post '/answer/:id' do
     @game = session[:game]
-    @game.lose_life unless @game.play_game(0)
-
-    redirect '/question' unless @game.game_over?
-
-    redirect '/game_over'
-  end
-
-  post '/answer_1' do
-    @game = session[:game]
-    @game.lose_life unless @game.play_game(1)
-
-    redirect '/question' unless @game.game_over?
-
-    redirect '/game_over'
-  end
-
-  post '/answer_2' do
-    @game = session[:game]
-    @game.lose_life unless @game.play_game(2)
+    @game.lose_life unless @game.play_game(params[:id].to_i)
 
     redirect '/question' unless @game.game_over?
 

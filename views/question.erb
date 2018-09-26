@@ -8,7 +8,7 @@
 <p> <%= @game.current_question.give_question %> </p>
 
 <% @answers.each do |answer| %>
-<form action='/answer_<%= @answers.index(answer) %>' method='post'>
+<form action='/answer/<%= @answers.index(answer) %>' method='post'>
   <input type='submit' value='<%= answer %>' />
 </form>
 
