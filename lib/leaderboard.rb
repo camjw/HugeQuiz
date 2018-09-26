@@ -11,8 +11,8 @@ class Leaderboard
 
   def get_leaderboard(number)
     leaders = @connection.exec('SELECT * FROM leaderboard ORDER BY score'\
-      " LIMIT #{number};")
-    leaders
+      " DESC LIMIT #{number};")
+    leaders.to_a
   end
 
   def give_random_seed(seed)
@@ -24,7 +24,7 @@ class Leaderboard
   def add_result(player)
     @connection.exec('INSERT INTO leaderboard(name, score) VALUES('\
       "'#{player.name}', #{player.score});")
-  end 
+  end
 
   def total_players
     @connection.exec('SELECT COUNT(*) FROM leaderboard;')[0]['count'].to_i
