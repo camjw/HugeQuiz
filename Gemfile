@@ -1,9 +1,12 @@
 source 'http://rubygems.org'
 
+ruby '2.4.4'
+
 gem 'capybara'
 gem 'pg'
 gem 'pry'
 gem 'rack'
+gem 'rake'
 gem 'rspec'
 gem 'rubocop'
 gem 'rubycritic'
