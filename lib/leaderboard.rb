@@ -4,7 +4,7 @@ require 'pg'
 class Leaderboard
   attr_reader :database
 
-  def initialize(database: 'quiz_questions')
+  def initialize(database: ENV['DATABASE_URL'])
     @database = database
     @connection = PG.connect(dbname: database)
   end
