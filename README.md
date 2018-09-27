@@ -29,7 +29,7 @@ PostgreSQL can be downloaded from [here](https://www.postgresql.org/download/).
 
 The database of questions has been populated by scraping a twitter feed found [here](https://twitter.com/HQTriviaScribe). This feed posts daily the multiple choice questions used in the HQ Trivia app quiz. This app can be downloaded for iOS [here](https://itunes.apple.com/gb/app/hq-live-trivia-game-show/id1232278996?mt=8), and offers cash prizes which this app unfortunately does not.
 
-Updating the database of questions requires rescraping the Twitter feed, which requires a Twitter developer account. If you already have one, store your developer key and secret locally as `TWITTER_KEY` and `TWITTER_SECRET` and run `data/twitter_scraper.rb` to update the `tweet_text.yml` file.
+Updating the database of questions requires rescraping the Twitter feed, which requires a Twitter developer account. If you already have one, store your developer key and secret locally as environment variables with names `TWITTER_KEY` and `TWITTER_SECRET` and run `data/twitter_scraper.rb` to update the `tweet_text.yml` file.
 
 ### Installing
 
