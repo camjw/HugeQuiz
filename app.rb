@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'sinatra/activerecord'
 require_relative 'lib/game'
 require_relative 'lib/player'
 require_relative 'lib/question_getter'
@@ -6,6 +7,7 @@ require_relative 'lib/question_getter'
 # This class is the wrapper for the website.
 class QuizApp < Sinatra::Base
   use Rack::Session::Pool
+  set :database_file, 'config/database.yml'
 
   def initialize(getter: QuestionGetter.new, seed: nil)
     super
