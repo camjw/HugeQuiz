@@ -27,3 +27,28 @@ def initialize_test_questions_table
   empty_test_questions_table
   populate_test_question_table
 end
+
+def empty_test_leaderboard
+  conn = PG.connect(dbname: 'quiz_questions_test')
+  conn.exec('TRUNCATE leaderboard RESTART IDENTITY;')
+end
+
+def populate_test_leaderboard
+  conn = PG.connect(dbname: 'quiz_questions_test')
+  test_leaders = [
+    ['Billy', 10],
+    ['Barry', 15],
+    ['Bertie', 7]
+  ]
+  test_leaders.each { |leader| insert_entry_to_table(conn, leader) }
+end
+
+def insert_entry_to_leaderboard(connection, player)
+  connection.exec("INSERT INTO leaderboard(name, score) VALUES('#{player[0]}',"\
+  "#{player[1]});")
+end
+
+def initialize_test_leaderboard
+  empty_test_leaderboard
+  populate_test_leaderboard
+end

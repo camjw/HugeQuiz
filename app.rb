@@ -64,4 +64,9 @@ class QuizApp < Sinatra::Base
     @top_scores = @game.fetch_top_scores
     erb :leaderboard
   end
+
+  post '/leaderboard' do
+    session[:game] = Game.new(Player.new('Stranger'), getter: @getter)
+    redirect '/leaderboard'
+  end
 end
