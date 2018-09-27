@@ -92,3 +92,4 @@ The app has not yet been deployed - this will be done once the styling of the ap
 - Twitter
 
 ## License
+This project is licensed under the terms of the MIT license.
