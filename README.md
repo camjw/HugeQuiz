@@ -1,6 +1,7 @@
-# Quizlet
+# HugeQuiz
 
-This repository is a multiple choice quiz game created in Ruby. Players answer as many questions as they can without running out of lives, and then can see their score in a leaderboard if they scored highly enough.
+This repository is a multiple choice quiz game created in Ruby. Players answer as many questions as they can without running out of lives, and then can see their score in a leaderboard if they scored highly enough. Note that this quiz is not particularly huge, but the questions have been scraped from another quiz with initials HQ.
+
 ## Getting Started
 
 This app is a Ruby app, so the user must have Ruby installed as well as Bundler, to download the correct gems.
