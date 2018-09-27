@@ -6,7 +6,12 @@ class Leaderboard
 
   def initialize(database: 'quiz_questions')
     @database = database
-    @connection = PG.connect(dbname: database)
+    if ENV['RACK_ENV'] == 'production'
+      uri = URI.parse(ENV['DATABASE_URL'])
+      @connection = PG.connect(uri.hostname, uri.port, nil, nil, uri.path[1..-1], uri.user, uri.password)
+    else
+      @connection = PG.connect(dbname: database)
+    end 
   end
 
   def get_leaderboard(number)
