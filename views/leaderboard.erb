@@ -1,10 +1,14 @@
 <head>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
 <h1> Welcome to the leaderboard! </h1>
+<table style='width:20%'>
+  <th> Name </th>
+  <th> Score </th>
 <% @top_scores.each do |score| %>
-  <li> <%= score["name"]%>: <%= score["score"] %> </li>
+  <tr> <td><%= score["name"]%></td><td> <%= score["score"] %> <td></tr>
 <% end %>
 
 <h2> Press this button to play again: </h2>
