@@ -3,10 +3,11 @@
 This repository is a multiple choice quiz game created in Ruby. Players answer as many questions as they can without running out of lives, and then can see their score in a leaderboard if they scored highly enough.
 ## Getting Started
 
+This app is a Ruby app, so the user must have Ruby installed as well as Bundler, to download the correct gems.
 
 ### Prerequisites
 
-There are only moderate prerequisites to running this app locally: Sinatra and PostgreSQL.
+There are only moderate prerequisites to running this app locally: Sinatra, PostgreSQL and a Twitter developer account if the user wants to update the database.
 
 #### SQL databases
 Running this repository locally requires PostgreSQL to manage the leaderboard
@@ -14,7 +15,8 @@ and question tables. A database called `quiz_questions` should be created with
 the following tables:
 
 ```sql
-questions(id SERIAL PRIMARY KEY, question(VARCHAR(1000)), first_answer(VARCHAR(100)), second_answer(VARCHAR(100)), third_answer(VARCHAR(100)), correct_answer(INTEGER))
+questions(id SERIAL PRIMARY KEY, question(VARCHAR(1000)), first_answer(VARCHAR(100)),
+ second_answer(VARCHAR(100)), third_answer(VARCHAR(100)), correct_answer(INTEGER))
 ```
 
 ```sql
@@ -83,5 +85,10 @@ end
 The app has not yet been deployed - this will be done once the styling of the app is complete.
 
 ## Built with
+
+- Ruby
+- Sinatra
+- PostgreSQL
+- Twitter
 
 ## License
