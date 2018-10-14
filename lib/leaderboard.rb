@@ -9,9 +9,11 @@ class Leaderboard
     if ENV['RACK_ENV'] == 'production'
       uri = URI.parse(ENV['DATABASE_URL'])
       @connection = PG.connect(uri.hostname, uri.port, nil, nil, uri.path[1..-1], uri.user, uri.password)
+    elsif ENV['RACK_ENV'] == 'development'
+      @connection = PG.connect(dbname: 'quiz_questions')
     else
-      @connection = PG.connect(dbname: database)
-    end 
+      @connection = PG.connect(dbname: 'quiz_questions_test')
+    end
   end
 
   def get_leaderboard(number)
