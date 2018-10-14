@@ -1,4 +1,5 @@
 # HugeQuiz
+https://hugequiz.herokuapp.com/
 
 This repository is a multiple choice quiz game created in Ruby. Players answer as many questions as they can without running out of lives, and then can see their score in a leaderboard if they scored highly enough. Note that this quiz is not particularly huge, but the questions have been scraped from another quiz with initials HQ.
 
