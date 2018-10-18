@@ -82,10 +82,6 @@ feature 'The user progresses' do
 end
 ```
 
-## Deployment
-
-The app has not yet been deployed - this will be done once the styling of the app is complete. The app will be deployed to Heroku.
-
 ## Built with
 
 - Ruby
